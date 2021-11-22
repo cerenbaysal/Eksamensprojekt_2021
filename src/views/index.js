@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", (event) => {
     const user = localStorage.getItem("user");
     if (!user) {
@@ -6,7 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("delete").addEventListener("submit", (event) => {
       event.preventDefault();
       const user = JSON.parse(localStorage.getItem("user"));
-      fetch("http://localhost:3000/users/delete", {
+      fetch("http://localhost:8000/users/delete", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -21,8 +22,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
           }
         })
         .catch(() => {
-          window.alert("Der skete en fejl");
+          window.alert("Fejl");
         });
     });
   });
-  
+  */

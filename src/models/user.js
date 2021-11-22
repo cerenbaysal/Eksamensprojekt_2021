@@ -1,4 +1,4 @@
-// Definerer bruger
+// Definerer bruger - to variabler: email og password
 class User {
     constructor(email, password) {
       this.email = email;

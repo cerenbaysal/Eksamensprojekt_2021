@@ -1,14 +1,19 @@
+// Starter min server
+
 // Importerer express
 const express = require('express');
 const app = express()
 
-// Controllers
+// Controllers - henter "user-controller.js" filen og putter den i "userController" variablen, så den kan anvendes under routes
 const userController = require("./src/controllers/user-controller");
 const PORT = process.env.PORT || 8000;
-// Middleware - endnu et fedt term
+
+// Middleware - det der sker før jeg kører noget i min Controller 
 app.use(express.static("./src/views"));
-// Kommer som string -> JSON
+
+// Konverterer fra string til JSON objekter
 app.use(express.json());
+
 // Routes
 app.use("/users", userController);
 

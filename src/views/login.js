@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+/*document.addEventListener("DOMContentLoaded", (event) => {
     const user = localStorage.getItem("user");
     if (user) {
       location.href = "/";
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => response.json())
         .then((response) => {
           if (response) {
+            
             // Gemme oplysninger
             localStorage.setItem("user", JSON.stringify(user));
             location.href = "/";
@@ -33,5 +34,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
   });
-  
+  */
   
