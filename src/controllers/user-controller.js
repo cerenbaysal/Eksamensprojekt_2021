@@ -14,14 +14,14 @@ router.post("/register", (req, res) => {
   db.saveUser(user);
   res.status(200).send(true);
 });
-/*
+
 // Slet profil
 router.delete("/delete", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);
   db.deleteUser(user);
   res.status(200).send(true);
 });
-*/
+
 // Log in med registeret profil
 router.post("/login", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);

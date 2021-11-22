@@ -1,9 +1,11 @@
-/*
+
 document.addEventListener("DOMContentLoaded", (event) => {
     const user = localStorage.getItem("user");
+    // Hvis brugeren ikke findes, følges man til login siden
     if (!user) {
       location.href = "/login.html";
     }
+
     document.getElementById("delete").addEventListener("submit", (event) => {
       event.preventDefault();
       const user = JSON.parse(localStorage.getItem("user"));
@@ -26,4 +28,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
   });
-  */
+  

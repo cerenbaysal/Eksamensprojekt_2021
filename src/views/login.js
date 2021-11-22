@@ -1,9 +1,12 @@
-// Tager fat i indholdet under form i "login.html" filen
 document.addEventListener("DOMContentLoaded", (event) => {
+    // Forblive logget ind
+    // Tjekker om brugeren er defineret i local storage
     const user = localStorage.getItem("user");
     if (user) {
       location.href = "/";
     }
+
+    // Henter indholdet under form i "login.html" filen
     document.getElementById("form").addEventListener("submit", (event) => {
       event.preventDefault();
       // Email variabel der henter værdien i email formen
@@ -28,11 +31,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => {
           // Hvis brugeren er en oprettet bruger/gemt i databasen, følges den hen til næste side/homepage
           if (response) {
-            // Gemmer oplysninger
+            // For at forblive logget ind/gemme information bruges en local storage funktion og set item funktion
             localStorage.setItem("user", JSON.stringify(user));
             location.href = "/";
           } else {
-            window.alert("Forkerte oplysninger");
+            window.alert("Forkert information");
           }
         })
         .catch(() => {
