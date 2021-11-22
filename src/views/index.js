@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       location.href = "/login.html";
     }
 
+    // Slette bruger
+    // Henter indeholdet i formen i index.html filen
     document.getElementById("delete").addEventListener("submit", (event) => {
       event.preventDefault();
       const user = JSON.parse(localStorage.getItem("user"));

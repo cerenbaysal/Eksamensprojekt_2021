@@ -22,6 +22,7 @@ router.delete("/delete", (req, res) => {
   res.status(200).send(true);
 });
 
+
 // Log in med registeret profil
 router.post("/login", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);

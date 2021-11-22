@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             localStorage.setItem("user", JSON.stringify(user));
             location.href = "/";
           } else {
-            window.alert("Forkert information");
+            window.alert("Forkerte oplysninger...");
           }
         })
         .catch(() => {
