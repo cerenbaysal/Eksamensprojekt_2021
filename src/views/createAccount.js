@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      location.href = "/login.html";
-    }
-    document.getElementById("delete").addEventListener("submit", (event) => {
+    document.getElementById("form").addEventListener("submit", (event) => {
       event.preventDefault();
-      const user = JSON.parse(localStorage.getItem("user"));
-      fetch("http://localhost:3000/users/delete", {
-        method: "DELETE",
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const user = {
+        email: email,
+        password: password,
+      };
+      fetch("http://localhost:8000/users/create", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -16,7 +17,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => response.json())
         .then((response) => {
           if (response) {
-            localStorage.removeItem("user");
             location.href = "/login.html";
           }
         })
