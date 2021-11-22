@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
         // Body er i form af JSON
         body: JSON.stringify(user),
-      }) // 
+      }) 
         .then((response) => response.json())
         .then((response) => {
           // Hvis brugeren bliver oprettet, følges brugeren til login siden
