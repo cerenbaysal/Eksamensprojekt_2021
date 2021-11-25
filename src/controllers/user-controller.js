@@ -22,8 +22,14 @@ router.delete("/delete", (req, res) => {
   res.status(200).send(true);
 });
 
+/*// Opdatere profil
+router.put("/update", (req, res) => {
 
-// Log in med registeret profil
+});
+*/
+
+
+// Login med registeret profil
 router.post("/login", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);
   // Finder den registerede bruger

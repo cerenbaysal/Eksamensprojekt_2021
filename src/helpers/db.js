@@ -1,8 +1,8 @@
 // Database filer
 
-// "File System" bibliotek - læse filer
+// "File System" bibliotek - læser filer
 var fs = require("fs");
-// Strenge der pather hen til data filen og users.json fil
+// Strenge der pather hen til data mappen og users.json fil
 const ABSOLUTE_PATH = __dirname + "/../../data";
 const USER_FILE = "/users.json";
 
@@ -24,22 +24,30 @@ class DB {
     return JSON.parse(file);
   }
   
-  
+  // Login data base
   saveUser(user) {
+    // Nyt JSON objekt tilføjes til users listen  
     this.users.push(user);
+    // Gemmer ny bruger og tilfjer til flad JSON fil
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
 
   deleteUser(user) {
+    // Filtrerer den bruger fra hvis email som er specificeret
     this.users = this.users.filter((x) => x.email != user.email);
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
 
+  
   findUser(user) {
     return this.users.find((x) => user.email == x.email);
   }
 }
-
+/*
+  logoutUser(user) {
+    this.saveFile(USER_FILE, JSON.stringify(this.users));
+  }
+*/
 
 // Singleton
 module.exports = new DB();
