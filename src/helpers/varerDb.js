@@ -1,11 +1,11 @@
 // "File System" bibliotek - læser filer
 var fs = require("fs");
-// Strenge der pather hen til data mappen og users.json fil
+// Strenge der pather hen til data mappen og varer.json fil
 const ABSOLUTE_PATH = __dirname + "/../../data";
 const VARE_FILE = "/varer.json";
 
 // Holde styr på hvad der står i databasen
-// laver en variabel i class der hedder users
+// laver en variabel i class der hedder varer
 class varerDb {
   constructor() {
     this.varer = this.openFile(VARE_FILE);
@@ -22,24 +22,23 @@ class varerDb {
     return JSON.parse(file);
   }
 
-
-// Login data base
 saveVare(vare) {
-  // Nyt JSON objekt tilføjes til users listen  
+  // Nyt JSON objekt tilføjes til varer listen  
   this.varer.push(vare);
-  // Gemmer ny bruger og tilfjer til flad JSON fil
+  // Gemmer ny vare og tilfjer til flad JSON fil
   this.saveFile(VARE_FILE, JSON.stringify(this.varer));
 }
-/*
+
 deleteVare(vare) {
-  // Filtrerer den bruger fra hvis email som er specificeret
-  this.varer = this.varer.filter((x) => x.varekategori != vare.varekategori);
+  // Filtrerer den vare fra hvis varekategori som er specificeret
+  this.varer = this.varer.filter((x) => x.produkt != vare.produkt);
   this.saveFile(VARE_FILE, JSON.stringify(this.varer));
 }
 findVare(vare) {
-  return this.varer.find((x) => vare.varekategori == x.varekategori);
+  return this.varer.find((x) => vare.produkt == x.produkt);
 }
-*/
+
+
 }
 
 module.exports = new varerDb();

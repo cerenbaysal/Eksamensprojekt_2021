@@ -1,12 +1,12 @@
-// Tager fat i indholdet under form i "createAccount.html" filen
+// Tager fat i indholdet under form i "opretVarer.html" filen
 document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault();
-    // Email variabel der henter værdien i email formen
+    // Varekategori variabel der henter værdien i varekategori formen
     const varekategori = document.getElementById("varekategori").value;
-    // Password variabel der henter værdien i password formen
+    // Produkt variabel der henter værdien i produkt formen
     const produkt = document.getElementById("produkt").value;
-    // Password variabel der henter værdien i password formen
+    // Pris variabel der henter værdien i pris formen
     const pris = document.getElementById("pris").value;
     // Værdierne bliver til JSON objekter
     const varer = {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }) 
       .then((response) => response.json())
       .then((response) => {
-        // Hvis brugeren bliver oprettet, følges brugeren til login siden
+        // Hvis varen bliver oprettet, følges brugeren til varer siden
         if (response) {
           location.href = "/varer.html";
         }
@@ -37,31 +37,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
   });
 });
-// Slette bruger
-// Henter indeholdet i formen i index.html filen
-document.getElementById("delete").addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  // Henter bruger og laver om til JSON objekt
-  const user = JSON.parse(localStorage.getItem("user"));
-  // Kalder følgende URL med delete metoden
-  fetch("http://localhost:8000/users/delete", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      // Hvis der er respons/lykkes tages man tilbage til login siden
-      .then((response) => response.json())
-      .then((response) => {
-        if (response) {
-          // Sletter brugeren inden i local storage  
-          localStorage.removeItem("user");
-          location.href = "/login.html";
-        }
-      })
-      .catch(() => {
-        window.alert("Fejl");
-      });
-  });

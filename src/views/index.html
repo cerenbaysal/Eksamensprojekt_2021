@@ -4,12 +4,45 @@
   </head>
   <body>
     <h1>Welcome!</h1>
+    <br>
+    <div class="container">
+      <button id="getUserCredentials">Click to see your profile</button>
+    </div> 
+    <br>
+    <div id="userCredentials"></div>
+
+
+    <form>
+      <input type="text" id="updateEmail" placeholder ="updateEmail">
+      <input type="text" id="updatePassword" placeholder ="updatePassword">
+      <button id="updateSubmit">Update profile</button>
+    </form>   
+    <br> 
     <form id="delete">
-    <form id="form">
-      <input value="Delete" type="submit" />
-      <input value="Logout" type="submit" />
+      <input value="Delete profile" type="submit" />
+    </form>  
+    <br>
+    <form id="update2">
+
+      <input value="Delete profile" type="submit" />
     </form>
-  </body>
+    <input type="text" id="updateEmail2" placeholder ="updateEmail">
+    <input type="text" id="updatePassword2" placeholder ="updatePassword">
+    <button onclick="myFunction()">Hej</button>
+    <script src="opretVarer.js"></script>
+
+    <form id="form">
+      <input placeholder="Varekategori" id="varekategori" />
+      <input placeholder="Produkt" id="produkt" />
+      <input placeholder="Pris" id="pris" />
+      <input value="Opret en vare" type="submit" />
+    </form>
+    <form id="logoutUser">
+
+      <input value="Logout" type="submit" />
+
+    </form>
+ </body>
 </html>
 
 

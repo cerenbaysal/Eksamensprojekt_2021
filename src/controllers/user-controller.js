@@ -1,11 +1,15 @@
 // Henter express
 const express = require("express");
+
 // Henter express router
 const router = express.Router();
 // Henter funktionalitet fra user.js filen
 const userModel = require("./../models/user");
 // Henter funktionalitet fra db.js filen
 const db = require("./../helpers/db");
+
+const fs = require('fs')
+
 
 // Opret profil
 // Skaffer email og password fra html 
@@ -22,11 +26,30 @@ router.delete("/delete", (req, res) => {
   res.status(200).send(true);
 });
 
-/*// Opdatere profil
-router.put("/update", (req, res) => {
+// Opdater profil
+router.get('/update', (req, res) => {
+  const user = new userModel(req.body.email, req.body.password);
+  db.updateUser(user);
+  res.status(200).send(true);
+})
 
-});
-*/
+router.put('/update', (req, res) => {
+  console.log("TestUpdate")
+  console.log(req.body)
+  console.log(JSON.parse(fs.readFileSync('Data/users.json')))
+   let dataArray = JSON.parse(fs.readFileSync('Data/users.json'))
+   for (let i = 0; i < dataArray.length; i++) {
+     if(dataArray[i].email == req.body.email) {
+       dataArray[i].password = req.body.password
+       fs.writeFile('Data/users.json', JSON.stringify(dataArray, null, 4), err => {
+         if(err) res.send(err)
+         res.status(200).json({
+           msg: 'Success'
+         })
+       })
+     }
+   }
+})
 
 
 // Login med registeret profil

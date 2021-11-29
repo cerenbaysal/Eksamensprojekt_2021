@@ -37,17 +37,18 @@ class DB {
     this.users = this.users.filter((x) => x.email != user.email);
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
-
+  updateUser(user) {
+    // Nyt JSON objekt tilføjes til users listen  
+    this.users 
+    // Gemmer ny bruger og tilfjer til flad JSON fil
+    this.saveFile(USER_FILE, JSON.stringify(this.users));
+  }
   
   findUser(user) {
     return this.users.find((x) => user.email == x.email);
   }
 }
-/*
-  logoutUser(user) {
-    this.saveFile(USER_FILE, JSON.stringify(this.users));
-  }
-*/
+
 
 // Singleton
 module.exports = new DB();
