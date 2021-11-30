@@ -34,17 +34,10 @@ class DB {
 
   deleteUser(user) {
     // Filtrerer den bruger fra hvis userName som er specificeret
-    this.users = this.users.filter((x) => x.userName != user.password);
+    this.users = this.users.filter((x) => x.userName != user.userName);
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
-  /*
-  updateUser(user) {
-    // Nyt JSON objekt tilføjes til users listen  
-    this.users 
-    // Gemmer ny bruger og tilfjer til flad JSON fil
-    this.saveFile(USER_FILE, JSON.stringify(this.users));
-  }
-  */
+  
   findUser(user) {
     return this.users.find((x) => user.userName == x.userName);
   }

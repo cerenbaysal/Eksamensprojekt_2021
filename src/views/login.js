@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => {
           // Hvis brugeren er en oprettet bruger/gemt i databasen, følges den hen til næste side/homepage
           if (response) {
-            // For at forblive logget ind/gemme information bruges en local storage funktion og set item funktion
+            // For at forblive logget ind/gemme information bruges en local storage funktion 
             localStorage.setItem("user", JSON.stringify(user));
             location.href = "/";
           } else {

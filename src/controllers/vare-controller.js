@@ -15,12 +15,9 @@ router.post("/opretVarer", (req, res) => {
   res.status(200).send(true);
 });
 
-/*
-// Slet vare
-router.delete("/sletVarer", (req, res) => {
-  const vare = new varerModel(req.body.varekategori, req.body.produkt, req.body.pris);
-  varerDb.deleteVare(vare);
-  res.status(200).send(true);
-});
-*/
+
+
+
+
+
 module.exports = router;

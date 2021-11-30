@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       produkt: produkt,
       pris: pris,
     };
-    
+   
     // Kalder følgende URL med post metoden 
     fetch("http://localhost:8000/varer/opretVarer", {
       method: "POST",
@@ -22,9 +22,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         "Content-Type": "application/json",
       },
       // Body er i form af JSON
-      body: JSON.stringify(varer),
+      body: JSON.stringify(varer)
     }) 
-      .then((response) => response.json())
-
+    .then((response) => response.json())
+    .then((response) => {
+      // Hvis varen bliver oprettes, får vi en window alert der siger at den er oprettet
+      if (response) {
+        window.alert("Vare oprettet!")
+      }
+    })
+    // Hvis ikke sker der en fejl
+    .catch(() => {
+      window.alert("Fejl");
   });
-});
+})});

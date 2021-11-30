@@ -23,35 +23,12 @@ router.delete("/delete", (req, res) => {
   db.deleteUser(user);
   res.status(200).send(true);
 });
-/*
-// Opdater profil
-router.get('/update', (req, res) => {
-  const user = new userModel(req.body.userName, req.body.password);
-  db.updateUser(user);
-  res.status(200).send(true);
-})
 
-router.put('/update', (req, res) => {
-  console.log("TestUpdate")
-  console.log(req.body)
-  console.log(JSON.parse(fs.readFileSync('Data/users.json')))
-   let dataArray = JSON.parse(fs.readFileSync('Data/users.json'))
-   for (let i = 0; i < dataArray.length; i++) {
-     if(dataArray[i].userName == req.body.userName) {
-       dataArray[i].password = req.body.password
-       fs.writeFile('Data/users.json', JSON.stringify(dataArray, null, 4), err => {
-         if(err) res.send(err)
-         res.status(200).json({
-           msg: 'Success'
-         })
-       })
-     }
-   }
-})
-*/
+
 
 // Login med registeret profil
 router.post("/login", (req, res) => {
+  console.log(req.body)
   const user = new userModel(req.body.userName, req.body.password);
   // Finder den registerede bruger
   const found = db.findUser(user);
