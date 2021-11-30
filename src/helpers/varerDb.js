@@ -28,17 +28,16 @@ saveVare(vare) {
   // Gemmer ny vare og tilfjer til flad JSON fil
   this.saveFile(VARE_FILE, JSON.stringify(this.varer));
 }
-
+/*
 deleteVare(vare) {
   // Filtrerer den vare fra hvis varekategori som er specificeret
   this.varer = this.varer.filter((x) => x.produkt != vare.produkt);
   this.saveFile(VARE_FILE, JSON.stringify(this.varer));
 }
+*/
 findVare(vare) {
   return this.varer.find((x) => vare.produkt == x.produkt);
 }
-
-
 }
 
 module.exports = new varerDb();

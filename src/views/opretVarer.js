@@ -1,4 +1,4 @@
-// Tager fat i indholdet under form i "opretVarer.html" filen
+// Tager fat i indholdet under form i "index.html" filen
 document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -25,15 +25,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       body: JSON.stringify(varer),
     }) 
       .then((response) => response.json())
-      .then((response) => {
-        // Hvis varen bliver oprettet, følges brugeren til varer siden
-        if (response) {
-          location.href = "/varer.html";
-        }
-      })
-      // Hvis ikke sker der en fejl
-      .catch(() => {
-        window.alert("Fejl");
-      });
+
   });
 });

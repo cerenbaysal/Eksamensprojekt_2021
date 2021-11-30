@@ -2,13 +2,13 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("form").addEventListener("submit", (event) => {
       event.preventDefault();
-      // Email variabel der henter værdien i email formen
-      const email = document.getElementById("email").value;
+      // Email variabel der henter værdien i userName formen
+      const userName = document.getElementById("userName").value;
       // Password variabel der henter værdien i password formen
       const password = document.getElementById("password").value;
       // Værdierne bliver til JSON objekter
       const user = {
-        email: email,
+        userName: userName,
         password: password,
       };
       
