@@ -15,9 +15,10 @@ router.post("/opretVarer", (req, res) => {
   res.status(200).send(true);
 });
 
+router.get("/returner_alle_varer", (req, res) => {
+  
+  res.status(200).json(varer2);
+});
 
 
-
-
-
-module.exports = router;
+module.exports = router; 

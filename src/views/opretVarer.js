@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }) 
     .then((response) => response.json())
     .then((response) => {
-      // Hvis varen bliver oprettes, får vi en window alert der siger at den er oprettet
+      // Hvis varen oprettes, får vi en window alert der siger at den er oprettet
       if (response) {
         window.alert("Vare oprettet!")
       }

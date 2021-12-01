@@ -6,4 +6,4 @@ class Vare {
       this.pris = pris;
     }
   }
-  module.exports = Vare;
+  module.exports = Vare; 

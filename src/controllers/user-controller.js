@@ -46,5 +46,10 @@ router.post("/login", (req, res) => {
   }
 });
 
+router.put('/update', (req, res) => {
+  const user = {userName: req.body.userName, password: req.body.password, olduserName: req.body.olduserName};
+  db.updateUser(user);
+  res.status(200).send(true);
+});
 
 module.exports = router;

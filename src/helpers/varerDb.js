@@ -29,6 +29,7 @@ saveVare(vare) {
   this.saveFile(VARE_FILE, JSON.stringify(this.varer));
 }
 
+
 findVare(vare) {
   return this.varer.find((x) => vare.produkt == x.produkt);
 }

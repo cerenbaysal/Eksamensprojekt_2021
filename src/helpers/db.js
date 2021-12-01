@@ -41,7 +41,23 @@ class DB {
   findUser(user) {
     return this.users.find((x) => user.userName == x.userName);
   }
+  // Opdatere
+  updateUser(user) {
+    for (let i=0; i < this.users.length; i++) {
+      console.log(this.users[i]);
+      console.log(user);
+      if (this.users[i].userName == user.olduserName) {
+        this.users[i].userName = user.userName;
+        this.users[i].password = user.password;
+      } 
+    }
+    this.saveFile(USER_FILE, JSON.stringify(this.users));
+  }
 }
+
+    
+  
+
 
 
 // Singleton

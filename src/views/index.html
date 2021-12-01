@@ -4,20 +4,7 @@
   </head>
   <body>
     <h1>Welcome!</h1>
-    <br>
-    <div class="container">
-      <button id="getUserCredentials">Click to see your profile</button>
-    </div> 
-    <br>
-    <div id="userCredentials"></div>
-
-
-    <form>
-      <input type="text" id="updateUserName" placeholder ="updateUserName">
-      <input type="text" id="updatePassword" placeholder ="updatePassword">
-      <button id="updateSubmit">Update profile</button>
-    </form>   
-    <br> 
+    
     <form id="delete">
       <input value="Delete profile" type="submit" />
     </form>
@@ -32,9 +19,26 @@
       <input placeholder="Pris" id="pris" />
       <input value="Opret en vare" type="submit" />
     </form>
+ </body> 
+ <body>
+        <script src="allProducts.js" async defer></script>   
+        <button id='klik'>Klik for at se alle dine varer til salg</button>
+        <table id="vareListe"></table>
+      </body>
+
+      <body>
+        <label id="form">Username:</label> <br>
+        <input type="username" name="username" id="newuserName" placeholder="Write new username">
     
-   
- </body>
+        <br><label>Password:</label> <br>
+        <input type="pawword" name="password" id="newPassword" placeholder="Write new password">
+    
+        <br>
+        <button id="update" value="Submit" type="submit" onclick="updateUser()" class="profile-btn">Update profile</button> 
+
+        <script src="updateUser.js"></script>
+    </body>
+
 </html>
 
 
